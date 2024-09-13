@@ -45,12 +45,8 @@ jobs:
         run: |
           Rscript -e 'if (!requireNamespace("pkgdown", quietly = TRUE)) install.packages("pkgdown")'
 
-      - name: Install local package
-        run: |
-          Rscript -e 'remotes::install_local(dependencies = TRUE)'
-
       - name: Build site
-        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = TRUE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀
