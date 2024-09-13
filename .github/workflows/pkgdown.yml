@@ -44,6 +44,7 @@ jobs:
       - name: Ensure pkgdown and local package is installed
         shell: Rscript {0}
         run: |
+          if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")
           devtools::install()
 
       - name: Build site
