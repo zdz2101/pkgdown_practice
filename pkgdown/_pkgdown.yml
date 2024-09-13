@@ -1,0 +1,15 @@
+# pkgdown/_pkgdown.yml
+pkgdown:
+  title: pkgdownpractice
+  description: "A simple practice package."
+  url: https://zdz2101.github.io/pkgdown_practice/
+
+navbar:
+  structure:
+    left:
+    - home
+    - reference
+
+template:
+  bootstrap: 5
+  bootswatch: minty
