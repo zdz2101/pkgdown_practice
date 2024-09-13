@@ -2,4 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-09-13T18:19Z
+last_built: 2024-09-13T20:29Z
+urls:
+  reference: https://zdz2101.github.io/pkgdown_practice/reference
+  article: https://zdz2101.github.io/pkgdown_practice/articles
