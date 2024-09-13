@@ -28,7 +28,7 @@ jobs:
 
       # Cache installed dependencies
       - name: Cache R dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           # Cache the R package library after dependencies are installed
           path: ~/.cache/R
