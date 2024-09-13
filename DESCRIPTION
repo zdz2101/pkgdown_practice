@@ -7,7 +7,6 @@ Depends:
     R (>= 4.3)
 Imports:
     dplyr(>= 1.1.0)
-    pkgdown
 Suggests: 
     testthat (>= 3.0.0)
 License:  MIT + file LICENSE
