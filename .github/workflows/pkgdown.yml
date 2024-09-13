@@ -29,7 +29,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
 
       - name: Restore R dependencies cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/R
           key: ${{ runner.os }}-R-${{ hashFiles('DESCRIPTION') }}
@@ -44,10 +44,10 @@ jobs:
       - name: Ensure pkgdown and local package is installed
         shell: Rscript {0}
         run: |
-          if (!requireNamespace("pkgdown", quietly = TRUE)) install.packages("pkgdown")
+          devtools::install()
 
       - name: Build site
-        run: pkgdown::build_site()
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀
