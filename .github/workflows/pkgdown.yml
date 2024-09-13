@@ -41,9 +41,11 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Ensure pkgdown is installed
+      - name: Ensure pkgdown and local package is installed
+        shell: Rscript {0}
         run: |
-          Rscript -e 'if (!requireNamespace("pkgdown", quietly = TRUE)) install.packages("pkgdown")'
+          if (!requireNamespace("pkgdown", quietly = TRUE)) install.packages("pkgdown")
+          devtools::load_all()
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = TRUE)
