@@ -23,7 +23,11 @@ jobs:
       - name: Install dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::pkgdown, any::devtools, local::.
+          cache-version: 2
+          extra-packages: |
+            any::pkgdown
+            any::devtools
+            local::.
           needs: website
 
       - name: Install local package and pkgdown
