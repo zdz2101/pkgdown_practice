@@ -39,3 +39,21 @@ jobs:
           key: ${{ runner.os }}-R-${{ hashFiles('DESCRIPTION') }}
           restore-keys: |
             ${{ runner.os }}-R-
+
+      - name: Check if pkgdown is installed
+        run: |
+          if (!requireNamespace("pkgdown", quietly = TRUE)) {
+            cat("pkgdown is NOT installed.\n")
+          } else {
+            cat("pkgdown is installed.\n")
+          }
+        shell: Rscript {0}
+
+      - name: Check if devtools is installed
+        run: |
+          if (!requireNamespace("devtools", quietly = TRUE)) {
+            cat("devtools is NOT installed.\n")
+          } else {
+            cat("devtools is installed.\n")
+          }
+        shell: Rscript {0}
