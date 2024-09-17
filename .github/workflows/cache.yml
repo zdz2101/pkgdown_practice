@@ -23,7 +23,6 @@ jobs:
       - name: Install dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          cache-version: 2
           extra-packages: |
             any::pkgdown
             any::devtools
@@ -34,8 +33,7 @@ jobs:
       - name: Cache R dependencies
         uses: actions/cache@v4
         with:
-          # Cache the R package library after dependencies are installed
-          path: ~/.cache/R
+          path: ~/R/x86_64-pc-linux-gnu-library/${{ matrix.r_version }}
           key: ${{ runner.os }}-R-${{ hashFiles('DESCRIPTION') }}
           restore-keys: |
             ${{ runner.os }}-R-
