@@ -30,11 +30,6 @@ jobs:
             local::.
           needs: website
 
-      - name: Install local package and pkgdown
-        shell: Rscript {0}
-        run: |
-          if (!requireNamespace("pkgdown", quietly = TRUE)) install.packages("pkgdown")
-
       # Cache installed dependencies
       - name: Cache R dependencies
         uses: actions/cache@v4
