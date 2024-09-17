@@ -20,7 +20,7 @@ jobs:
       - name: Restore R dependencies cache
         uses: actions/cache@v4
         with:
-          path: ~/.cache/R
+          path: ~/R/x86_64-pc-linux-gnu-library/${{ matrix.r_version }}
           key: ${{ runner.os }}-R-${{ hashFiles('DESCRIPTION') }}
           restore-keys: |
             ${{ runner.os }}-R-
@@ -30,6 +30,9 @@ jobs:
 
       - name: Check if pkgdown is installed
         run: |
-          library(pkgdown)
-          library(devtools)
-          loadedNamespaces()
+          if (!requireNamespace("pkgdown", quietly = TRUE)) {
+            cat("pkgdown is NOT installed.\n")
+          } else {
+            cat("pkgdown is installed.\n")
+          }
+        shell: Rscript {0}
