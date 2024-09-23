@@ -1,8 +1,8 @@
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
   release:
     types: [published]
   workflow_dispatch:
@@ -34,5 +34,14 @@ jobs:
             cat("pkgdown is NOT installed.\n")
           } else {
             cat("pkgdown is installed.\n")
+          }
+        shell: Rscript {0}
+
+      - name: Check if devtools is installed
+        run: |
+          if (!requireNamespace("devtools", quietly = TRUE)) {
+            cat("devtools is NOT installed.\n")
+          } else {
+            cat("devtools is installed.\n")
           }
         shell: Rscript {0}

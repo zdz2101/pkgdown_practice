@@ -2,9 +2,9 @@ name: cache
 
 on:
   push:
-    branches: [main, master]
+    branches: [none]
   pull_request:
-    branches: [main, master]
+    branches: [none]
   release:
     types: [published]
   workflow_dispatch:
