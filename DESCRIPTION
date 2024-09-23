@@ -6,9 +6,49 @@ Description: Practice playground for github workflows.
 Depends: 
     R (>= 4.3)
 Imports:
-    dplyr(>= 1.1.0)
-Suggests: 
-    testthat (>= 3.0.0)
+    broom,
+    cli,
+    dplyr,
+    ggplot2,
+    glue,
+    htmltools,
+    htmlwidgets,
+    jsonlite,
+    magrittr,
+    purrr,
+    rlang (>= 0.4.11),
+    stats,
+    stringr,
+    tibble,
+    tidyr,
+    tools,
+    utils,
+    yaml
+Suggests:
+    clindata,
+    covr,
+    DT,
+    fontawesome (>= 0.2.2),
+    gggenes,
+    ggiraph,
+    gt,
+    here,
+    kableExtra,
+    knitr,
+    lamW,
+    lifecycle (>= 1.0.1),
+    lubridate,
+    pander,
+    pkgdown,
+    riskmetric,
+    rmarkdown,
+    roxygen2,
+    safetyData,
+    sqldf,
+    styler,
+    testthat,
+    usethis,
+    withr
 License:  MIT + file LICENSE
 URL: https://github.com/zdz2101/pkgdown_practice,
     https://zdz2101.github.io/pkgdown_practice/
