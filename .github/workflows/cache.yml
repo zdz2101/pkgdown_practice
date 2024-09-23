@@ -2,9 +2,9 @@ name: cache
 
 on:
   push:
-    branches: [none]
+    branches: [main]
   pull_request:
-    branches: [none]
+    branches: [main]
   release:
     types: [published]
   workflow_dispatch:
@@ -29,29 +29,11 @@ jobs:
             local::.
           needs: website
 
-      # Cache installed dependencies
       - name: Cache R dependencies
         uses: actions/cache@v4
         with:
-          path: ~/R/x86_64-pc-linux-gnu-library/${{ matrix.r_version }}
+          # Cache the R package library after dependencies are installed
+          path: ~/.cache/R
           key: ${{ runner.os }}-R-${{ hashFiles('DESCRIPTION') }}
           restore-keys: |
             ${{ runner.os }}-R-
-
-      - name: Check if pkgdown is installed
-        run: |
-          if (!requireNamespace("pkgdown", quietly = TRUE)) {
-            cat("pkgdown is NOT installed.\n")
-          } else {
-            cat("pkgdown is installed.\n")
-          }
-        shell: Rscript {0}
-
-      - name: Check if devtools is installed
-        run: |
-          if (!requireNamespace("devtools", quietly = TRUE)) {
-            cat("devtools is NOT installed.\n")
-          } else {
-            cat("devtools is installed.\n")
-          }
-        shell: Rscript {0}
