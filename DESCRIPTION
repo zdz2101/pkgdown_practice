@@ -49,6 +49,8 @@ Suggests:
     testthat,
     usethis,
     withr
+Remotes:
+    clindata=Gilead-BioStats/clindata
 License:  MIT + file LICENSE
 URL: https://github.com/zdz2101/pkgdown_practice,
     https://zdz2101.github.io/pkgdown_practice/
