@@ -9,7 +9,7 @@ on:
     types: [published]
   workflow_dispatch:
 
-name: pkgdown
+name: test without cache
 
 permissions: read-all
 
