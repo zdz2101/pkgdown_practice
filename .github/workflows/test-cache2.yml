@@ -14,7 +14,7 @@ name: test without restore cache
 permissions: read-all
 
 jobs:
-  test wo cache:
+  test_wo_cache:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
